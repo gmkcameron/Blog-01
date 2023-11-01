@@ -1,6 +1,6 @@
 /* Styles */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-@import url('https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css');
 @import "reset.css";
 @import "header.css";
 @import "slider.css";
