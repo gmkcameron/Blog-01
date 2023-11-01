@@ -1,4 +1,4 @@
-## 🖥️ Projeto Final
+## 🖥️ Projeto Final (ainda em andamento)
 
 Esse é um Projeto Web Responsivo de um Blog, feito como projeto final da disciplina de Desenvolvimento Web na Universidade Estácio de Sá.
 
