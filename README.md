@@ -1,6 +1,6 @@
 ## 🖥️ Projeto Final
 
-Esse é um Projeto Web Responsivo de um Blog, feito como projeto final da disciplina de Desenvolvimento Web.
+Esse é um Projeto Web Responsivo de um Blog, feito como projeto final da disciplina de Desenvolvimento Web na Universidade Estácio de Sá.
 
 ## 🚀 Tecnologias
 
