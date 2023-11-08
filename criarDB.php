@@ -41,14 +41,11 @@ else{
 
 //Comando para criar tabelas no bando de dados
 $sql = "
-      CREATE TABLE IF NOT EXISTS $nomeDoBanco.pacotes (
-        id                INT(6) AUTO_INCREMENT PRIMARY KEY,
-        cidade            VARCHAR(250) NOT NULL,
-        pais              VARCHAR(250) NOT NULL,  
-        numero_pessoas    INT(6) NOT NULL, 
-        numero_noites     INT(6) NOT NULL, 
-        valor_Pacote      INT(6) NOT NULL,
-        path_imagem       VARCHAR(250) NOT NULL
+      CREATE TABLE IF NOT EXISTS $nomeDoBanco.viagens (
+            id INT(6) AUTO_INCREMENT PRIMARY KEY,
+            nome VARCHAR(250) NOT NULL,
+            email VARCHAR(250) NOT NULL,
+            telefone VARCHAR(20) NOT NULL
 
       )
 
