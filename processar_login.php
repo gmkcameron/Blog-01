@@ -1,32 +1,37 @@
 <?php
-// Faça a conexão com o banco de dados (substitua com suas credenciais)
-$host = "localhost";
-$usuario = "seu_usuario";
-$senha = "sua_senha";
-$banco = "seu_banco_de_dados";
+// processar_login.php
 
-$conexao = new mysqli($host, $usuario, $senha, $banco);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recupere e valide as informações fornecidas pelo usuário
+    $nome = filter_var($_POST['nome'], FILTER_SANITIZE_EMAIL);
+    $senha = filter_var($_POST['senha'], FILTER_SANITIZE_STRING);
 
-if ($conexao->connect_error) {
-    die("Erro na conexão com o banco de dados: " . $conexao->connect_error);
-}
+    // Conecte-se ao banco de dados e verifique as credenciais
+    $nome = $_POST['nome'];
+    $senha = $_POST['senha'];
+    $dbname = "cadastro";
 
-// Receba dados do formulário de login
-$username = $_POST['username'];
-$password = $_POST['password'];
+    $conn = new mysqli($nome, $senha, $dbname);
 
-// Consulta SQL para verificar as credenciais (substitua com sua consulta real)
-$sql = "SELECT * FROM viagens WHERE username = '$username' AND password = '$password'";
+    if ($conn->connect_error) {
+        die("Conexão falhou: " . $conn->connect_error);
+    }
 
-$resultado = $conexao->query($sql);
+    $sql = "SELECT id, nome FROM cadastro WHERE nome = '$nome' AND senha = '$senha'";
+    $result = $conn->query($sql);
 
-if ($resultado->num_rows == 1) {
-    // Credenciais válidas
-    session_start();
-    $_SESSION['username'] = $username;
-    header("Location: dashboard.php"); // Redirecione para a página do painel após o login
-} else {
-    // Credenciais inválidas
-    header("Location: login.html?erro=1"); // Redirecione de volta à página de login com uma mensagem de erro
+    if ($result->num_rows > 0) {
+        // Usuário autenticado com sucesso
+    
+        // Redirecione para a página principal ou outra página desejada
+        header("Location: index.php")
+        exit();  // ou die();
+    } else {
+        // Credenciais inválidas
+        echo "Login falhou. Verifique seu e-mail e senha.";
+    }    
+
+    // Feche a conexão
+    $conn->close();
 }
 ?>

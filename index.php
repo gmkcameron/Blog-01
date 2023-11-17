@@ -95,12 +95,12 @@ include "config.php";
       if( empty($_REQUEST['page'])){  
         ?>
         <div class="jumbotron">
-          <h2><?php echo "Bem vindo(a) ".$logado ?> - Agenda Telefônica!</h2>
+          <h2><?php echo "Bem vindo(a) ".$logado ?> Blog de Viagens</h2>
           <p>Aqui você cadastra os seus contatos e pode realizar buscas a qualquer momento e em qualquer lugar!</p>
         </div>
         <?php }else{
           $pagina = $_REQUEST['page'];
-          include ($pagina.'.php');
+          include ($pagina.'config.php');
         }
         ?>
 
